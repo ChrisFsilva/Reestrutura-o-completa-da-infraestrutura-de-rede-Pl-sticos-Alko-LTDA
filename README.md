@@ -14,7 +14,6 @@ Tabela de conteúdos
    * [pfSense](#pfsense)
    * [Monitoramento](#monitoramento)
    * [Proxmox](#proxmox)
- * [Tecnologias](#-tecnologias)
  * [Autor](#-autor)
  * [Licença](#-licença)
 <!--te-->
