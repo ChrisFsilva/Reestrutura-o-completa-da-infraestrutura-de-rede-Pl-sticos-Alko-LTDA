@@ -314,7 +314,47 @@ Open-source e gratuito: código aberto, com licença empresarial opcional para s
 Baixo consumo de recursos: ideal para home labs, servidores de desenvolvimento e infraestruturas corporativas.
 Integração com automações: compatível com Ansible, Terraform, Power Automate, API JSON, entre outros.
 ```
+#### Topologia final
 
+```mermaid
+graph TD
+A[Firewall pfSense] --> B[Switch Cisco cb220]
+A[Firewall Draytek] --> B
+B --> C[Proxmox]
+B --> D[Switch HP Aruba 1920 - Galpão 3]
+B --> E[Switch HP Aruba 1920 - Galpão 6] 
+B --> F[Switch HP Aruba 1920 - Galpão 12]
+B --> Y[Switch HP Aruba 1920 - Escritorio]
+D --> G[Swich Layer 2 não gerenciavel - Galpão 1]
+D --> H[Swich Layer 2 não gerenciavel - Galpão 2]
+D --> I[Swich Layer 2 não gerenciavel - Galpão 3]
+G --> J[Acess Point Vlan 200]
+H --> K[Acess Point Vlan 200]
+I --> L[Acess Point Vlan 200]
+E --> M[Swich Layer 2 não gerenciavel - Galpão 4]
+E --> N[Swich Layer 2 não gerenciavel - Galpão 5]
+E --> O[Swich Layer 2 não gerenciavel - Galpão 6]
+M --> P[Acess Point Vlan 300]
+N --> Q[Acess Point Vlan 300]
+O --> R[Acess Point Vlan 300]
+F --> S[Swich Layer 2 não gerenciavel - Galpão 7]
+F --> T[Swich Layer 2 não gerenciavel - Galpão 8]
+F --> U[Swich Layer 2 não gerenciavel - Galpão 9]
+S --> V[Acess Point Vlan 400]
+T --> X[Acess Point Vlan 400]
+U --> W[Acess Point Vlan 400]
+Y --> Z[Acess Point Vlan 100]
+Y --> AB[Acess Point Vlan 100]
+Y --> AC[Acess Point Vlan 100]
+C --> AD[Servidor AD]
+C --> AE[Servidor Pi-hole]
+AE --> AI[Pi-hole com sistema Keepalive]
+AI --> AE
+C --> AF[Servidor Nextcloud]
+C --> AG[Servidor Proxmox]
+B --> AH[Sistema de cameras]
+
+```
 ## 🦸🏻‍♂️ Autor
 
  <br>
